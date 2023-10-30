@@ -1,22 +1,14 @@
 const mongoose = require('mongoose');
 
-const usuarioSchema = mongoose.Schema({
-    nombre: {
+const promocionesSchema = mongoose.Schema({
+    id_nombre_promocion: {
         type: String,
         required: true,
+        unique: true
     },
-    apellido: {
+    url_imagen_promocion: {
         type: String,
-        required: true,
-    },
-    usuario: {
-        type: String,
-        required: true,
-        unique: true,
-    },
-    password: {
-        type: String,
-        required: true,
+        required: true
     },
     created_at: {
         type: Date,
@@ -49,4 +41,4 @@ const usuarioSchema = mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model('Usuarios', usuarioSchema);
+module.exports = mongoose.model('Promociones', promocionesSchema);
