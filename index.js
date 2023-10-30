@@ -1,13 +1,24 @@
-require('dotenv').config();
-require('./src/configs/db.config');
-const express = require('express');
-const app = express();
-const usuariosRouter = require('./src/routes/usuarios.route')
+require("dotenv").config();
+require("./src/configs/db.config");
 
-app.use(express.json())
-app.use('/usuarios', usuariosRouter)
+const express = require("express");
+const app = express();
+//  TODO: Importar archivos de rutas
+const usuariosRouter = require('./src/routes/usuarios.route');
+const authRouter = require('./src/routes/auth.route');
+const promocionesRouter = require('./src/routes/promociones.route');
+const productosRouter = require('./src/routes/productos.route')
+
+app.use(express.json());
+
+//  TODO: Ruta de ejemplo
+app.use('/usuarios', usuariosRouter);
+app.use('/auth', authRouter);
+app.use('/promociones', promocionesRouter);
+app.use('/productos', productosRouter);
+
 
 const PORT = process.env.PORT;
-app.listen(PORT, () =>{
-    console.log("API en escucha en el puerto "+PORT)
-})
+app.listen(PORT, () => {
+  console.log("API escuchando en el puerto " + PORT);
+});
