@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "api-mongodb-motomania",
-    "dateExported": "2023-10-30T02:43:42.305Z",
+    "dateExported": "2023-11-02T22:02:01.973Z",
     "version": "1.1",
     "folders": [
         {
@@ -43,17 +43,17 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-10-28T15:36:12.021Z",
-            "modified": "2023-10-30T01:44:24.335Z",
+            "modified": "2023-10-31T02:55:20.632Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmFUb2tlbiJ9LCJpYXQiOjE2OTg3MjA4NjEsImV4cCI6MTY5ODcyODA2MX0.8EX6WAZtun1GsznUjIISWg8yS03MH7bbvhZ_DJKRYN0"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"NombrePrueba\",\n  \"apellido\": \"ApellidoPrueba\",\n  \"usuario\": \"pruebaToken\",\n  \"password\": \"prueba\",\n  \"createdBy\": \"admin\" \n}",
+                "raw": "{\n  \"nombre\": \"NombrePrueba\",\n  \"apellido\": \"ApellidoPrueba\",\n  \"usuario\": \"prueba3\",\n  \"password\": \"prueba\",\n  \"createdBy\": \"admin\" \n}",
                 "form": []
             },
             "tests": []
@@ -63,15 +63,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "02dcf53c-ec26-469d-9efa-c149418b916c",
             "name": "obtenerPorUsuario",
-            "url": "http://localhost:8081/usuarios/usuario2",
+            "url": "http://localhost:8081/usuarios/pruebaToken",
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-10-28T16:45:26.860Z",
-            "modified": "2023-10-30T01:46:48.774Z",
+            "modified": "2023-10-31T02:57:47.860Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmFUb2tlbiJ9LCJpYXQiOjE2OTg3MjA4NjEsImV4cCI6MTY5ODcyODA2MX0.8EX6WAZtun1GsznUjIISWg8yS03MH7bbvhZ_DJKRYN0"
                 }
             ],
             "params": [],
@@ -82,15 +82,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "02dcf53c-ec26-469d-9efa-c149418b916c",
             "name": "deleteLogico",
-            "url": "http://localhost:8081/usuarios/usuario1/admin",
+            "url": "http://localhost:8081/usuarios/pruebaToken/admin",
             "method": "DELETE",
             "sortNum": 30000,
             "created": "2023-10-28T17:05:27.543Z",
-            "modified": "2023-10-30T01:45:33.635Z",
+            "modified": "2023-10-31T02:58:01.754Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmFUb2tlbiJ9LCJpYXQiOjE2OTg3MjA4NjEsImV4cCI6MTY5ODcyODA2MX0.8EX6WAZtun1GsznUjIISWg8yS03MH7bbvhZ_DJKRYN0"
                 }
             ],
             "params": [],
@@ -105,11 +105,11 @@
             "method": "GET",
             "sortNum": 40000,
             "created": "2023-10-28T17:17:41.656Z",
-            "modified": "2023-10-30T01:46:00.570Z",
+            "modified": "2023-10-31T02:56:18.856Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmFUb2tlbiJ9LCJpYXQiOjE2OTg3MjA4NjEsImV4cCI6MTY5ODcyODA2MX0.8EX6WAZtun1GsznUjIISWg8yS03MH7bbvhZ_DJKRYN0"
                 }
             ],
             "params": [],
@@ -120,15 +120,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "02dcf53c-ec26-469d-9efa-c149418b916c",
             "name": "actualizarPorUsuario",
-            "url": "http://localhost:8081/usuarios/usuario2",
+            "url": "http://localhost:8081/usuarios/pruebaToken",
             "method": "PUT",
             "sortNum": 50000,
             "created": "2023-10-28T17:25:30.491Z",
-            "modified": "2023-10-30T01:46:39.933Z",
+            "modified": "2023-10-31T02:57:39.980Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmFUb2tlbiJ9LCJpYXQiOjE2OTg3MjA4NjEsImV4cCI6MTY5ODcyODA2MX0.8EX6WAZtun1GsznUjIISWg8yS03MH7bbvhZ_DJKRYN0"
                 }
             ],
             "params": [],
@@ -148,12 +148,12 @@
             "method": "POST",
             "sortNum": 60000,
             "created": "2023-10-28T17:41:00.416Z",
-            "modified": "2023-10-29T19:00:35.070Z",
+            "modified": "2023-11-02T20:32:19.018Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"usuario\":\"usuario1\",\n  \"password\":\"password1\"\n}",
+                "raw": "{\n  \"usuario\":\"Usuario1\",\n  \"password\":\"password1\"\n}",
                 "form": []
             },
             "tests": []
@@ -167,11 +167,11 @@
             "method": "POST",
             "sortNum": 70000,
             "created": "2023-10-28T20:59:39.063Z",
-            "modified": "2023-10-30T01:47:06.772Z",
+            "modified": "2023-11-02T18:07:39.110Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODEwMywiZXhwIjoxNjk4OTU1MzAzfQ.wecP34lJHBtYj02qvzoSzaLb-s6uO1LbfqDFWWXoc-8"
                 }
             ],
             "params": [],
@@ -191,7 +191,7 @@
                 "files": [
                     {
                         "name": "imagen",
-                        "value": "c:\\Users\\Iskander Ramos\\Pictures\\imagen.png"
+                        "value": "c:\\Users\\Iskander Ramos\\Downloads\\smashcolor2.webp"
                     }
                 ]
             },
@@ -216,15 +216,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "1aa52a4a-56a5-4e33-b431-640b6ee0a5e0",
             "name": "obtenerPromocion",
-            "url": "http://localhost:8081/promociones/Promocion1",
+            "url": "http://localhost:8081/promociones/prueba2",
             "method": "GET",
             "sortNum": 100000,
             "created": "2023-10-28T21:50:08.189Z",
-            "modified": "2023-10-30T02:30:49.976Z",
+            "modified": "2023-11-02T18:16:21.811Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODk0OSwiZXhwIjoxNjk4OTU2MTQ5fQ.-hSUafksCjOpe_YLrlQLgzQWBv_ffN7dKjaChFT3dYE"
                 }
             ],
             "params": [],
@@ -235,15 +235,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "1aa52a4a-56a5-4e33-b431-640b6ee0a5e0",
             "name": "actualizarPromocion",
-            "url": "http://localhost:8081/promociones/Promocion1",
+            "url": "http://localhost:8081/promociones/prueba2",
             "method": "PUT",
             "sortNum": 110000,
             "created": "2023-10-28T21:50:54.876Z",
-            "modified": "2023-10-30T02:31:28.740Z",
+            "modified": "2023-11-02T18:19:02.973Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODk0OSwiZXhwIjoxNjk4OTU2MTQ5fQ.-hSUafksCjOpe_YLrlQLgzQWBv_ffN7dKjaChFT3dYE"
                 }
             ],
             "params": [],
@@ -259,7 +259,7 @@
                 "files": [
                     {
                         "name": "imagen",
-                        "value": "c:\\Users\\Iskander Ramos\\Downloads\\ghast.jpg"
+                        "value": "c:\\Users\\Iskander Ramos\\Downloads\\41N6t-Qys0L.webp"
                     }
                 ]
             },
@@ -270,15 +270,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "1aa52a4a-56a5-4e33-b431-640b6ee0a5e0",
             "name": "eliminarPromocion",
-            "url": "http://localhost:8081/promociones/Promocion1/admin",
+            "url": "http://localhost:8081/promociones/prueba2/admin",
             "method": "DELETE",
             "sortNum": 120000,
             "created": "2023-10-29T00:51:41.911Z",
-            "modified": "2023-10-30T02:32:57.485Z",
+            "modified": "2023-11-02T18:19:40.022Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODk0OSwiZXhwIjoxNjk4OTU2MTQ5fQ.-hSUafksCjOpe_YLrlQLgzQWBv_ffN7dKjaChFT3dYE"
                 }
             ],
             "params": [],
@@ -293,11 +293,11 @@
             "method": "POST",
             "sortNum": 130000,
             "created": "2023-10-29T16:14:29.237Z",
-            "modified": "2023-10-30T02:37:12.652Z",
+            "modified": "2023-11-02T19:47:22.980Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODk0OSwiZXhwIjoxNjk4OTU2MTQ5fQ.-hSUafksCjOpe_YLrlQLgzQWBv_ffN7dKjaChFT3dYE"
                 }
             ],
             "params": [],
@@ -307,7 +307,7 @@
                 "form": [
                     {
                         "name": "codigo",
-                        "value": "80-5327-001"
+                        "value": "80-5320-001"
                     },
                     {
                         "name": "modelo",
@@ -319,7 +319,7 @@
                     },
                     {
                         "name": "tipo_producto",
-                        "value": "{ tipo: \"Casco\", talla: \"L\"}"
+                        "value": "{ \"categoria\": \"Cascos\", \"atributo2\": \"Valor2\" }"
                     },
                     {
                         "name": "created_by",
@@ -340,15 +340,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "e1671b6a-8551-41af-939d-48fa9404dd10",
             "name": "obtenerProducto",
-            "url": "http://localhost:8081/productos/P1001",
+            "url": "http://localhost:8081/productos/80-5320-001",
             "method": "GET",
             "sortNum": 140000,
             "created": "2023-10-29T16:26:14.466Z",
-            "modified": "2023-10-30T02:38:14.230Z",
+            "modified": "2023-11-02T19:05:19.225Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODk0OSwiZXhwIjoxNjk4OTU2MTQ5fQ.-hSUafksCjOpe_YLrlQLgzQWBv_ffN7dKjaChFT3dYE"
                 }
             ],
             "params": [],
@@ -359,15 +359,15 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "e1671b6a-8551-41af-939d-48fa9404dd10",
             "name": "updateProducto",
-            "url": "http://localhost:8081/productos/P1001",
+            "url": "http://localhost:8081/productos/80-5320-001",
             "method": "PUT",
             "sortNum": 150000,
             "created": "2023-10-29T17:10:02.473Z",
-            "modified": "2023-10-30T02:42:31.451Z",
+            "modified": "2023-11-02T19:04:28.841Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODk0OSwiZXhwIjoxNjk4OTU2MTQ5fQ.-hSUafksCjOpe_YLrlQLgzQWBv_ffN7dKjaChFT3dYE"
                 }
             ],
             "params": [],
@@ -389,7 +389,7 @@
                     },
                     {
                         "name": "tipo_producto",
-                        "value": "{ tipo: \"Casco\", talla: \"L\"} "
+                        "value": "{ tipo: \"Casco\", talla: \"L\"}"
                     }
                 ],
                 "files": [
@@ -406,13 +406,24 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "e1671b6a-8551-41af-939d-48fa9404dd10",
             "name": "obtenerTodosProductos",
-            "url": "http://localhost:8081/productos",
+            "url": "http://localhost:8081/productos?page=1&limit=2",
             "method": "GET",
             "sortNum": 160000,
             "created": "2023-10-29T17:22:33.446Z",
-            "modified": "2023-10-29T17:22:39.215Z",
+            "modified": "2023-11-02T19:07:58.284Z",
             "headers": [],
-            "params": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
             "tests": []
         },
         {
@@ -420,15 +431,39 @@
             "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
             "containerId": "e1671b6a-8551-41af-939d-48fa9404dd10",
             "name": "deleteProducto",
-            "url": "http://localhost:8081/productos/P1001",
+            "url": "http://localhost:8081/productos/80-5320-001",
             "method": "DELETE",
             "sortNum": 170000,
             "created": "2023-10-29T17:24:23.364Z",
-            "modified": "2023-10-30T02:43:29.538Z",
+            "modified": "2023-11-02T19:13:01.423Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg2MzAyMzUsImV4cCI6MTY5ODYzNzQzNX0.Zw7RqnRy_jxRIl4_v5Mur5ED4NjBN94cekOheolWtFU"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJwcnVlYmEzIn0sImlhdCI6MTY5ODk0ODk0OSwiZXhwIjoxNjk4OTU2MTQ5fQ.-hSUafksCjOpe_YLrlQLgzQWBv_ffN7dKjaChFT3dYE"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"deleted_by\":\"admin\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "65ebf035-6280-4153-a489-f599fa72286f",
+            "colId": "4c07eae9-c954-4b7a-9f96-6ea1352ec29c",
+            "containerId": "e1671b6a-8551-41af-939d-48fa9404dd10",
+            "name": "getCategoria",
+            "url": "http://localhost:8081/productos/categorias/Cascos",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2023-10-31T01:03:13.999Z",
+            "modified": "2023-11-02T21:21:31.634Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InVzdWFyaW8iOiJ1c3VhcmlvMSJ9LCJpYXQiOjE2OTg5NTcxMzksImV4cCI6MTY5ODk2NDMzOX0.-Hs9iTEORvs59O72Qh6_Wg8vvLi5pJxKsIp_tMtU110"
                 }
             ],
             "params": [],

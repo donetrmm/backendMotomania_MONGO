@@ -100,6 +100,22 @@ const getProducto = async (req, res) => {
   }
 };
 
+const getCategoria = async (req, res) => {
+  try {
+    const { categoria } = req.params;
+
+    const productos = await Producto.find({ 'tipo_producto.categoria': categoria, deleted: false });
+
+    if (!productos) {
+      return res.status(404).json({ error: "Productos no encontrados" });
+    }
+
+    res.status(200).json(productos);
+  } catch (error) {
+    res.status(500).json({ error: "Error al buscar los productos" });
+  }
+};
+
 const getProductos = async (req, res) => {
   try {
     const page = parseInt(req.query.page);
@@ -135,4 +151,5 @@ module.exports = {
   deleteProducto,
   getProducto,
   getProductos,
+  getCategoria
 };

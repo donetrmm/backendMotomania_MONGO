@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
+require("dotenv").config();
 const Promocion = require('../models/promociones.model'); 
-const url_mongo = "mongodb://127.0.0.1:27017/motomania";
 
-mongoose.connect(url_mongo, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.URL_MONGODB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const promocionesData = [
   {
