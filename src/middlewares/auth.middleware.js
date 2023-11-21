@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
-const jwtSecret = 'motomania';
+require("dotenv").config();
+const jwtSecret = process.env.JWT_SECRET;
+
 
 const verificarJWT = (req, res, next) => {
     const token = req.get('Authorization');
@@ -7,7 +9,7 @@ const verificarJWT = (req, res, next) => {
     jwt.verify(token, jwtSecret, (err, decode) => {
         if (err) {
             return res.status(401).send({
-                message: "error al validar token",
+                message: "Error al validar token",
                 error: err.message
             });
         }

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require("dotenv").config();
-const Promocion = require('../models/promociones.model'); 
+const Promocion = require('../models/promocion.model'); 
 
 mongoose.connect(process.env.URL_MONGODB, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -8,27 +8,27 @@ const promocionesData = [
   {
     id_nombre_promocion: 'Promocion1',
     url_imagen_promocion: 'imagen1.jpg',
-    created_by: "admin"
+    created_by: "Seeder"
   },
   {
     id_nombre_promocion: 'Promocion2',
     url_imagen_promocion: 'imagen2.jpg',
-    created_by: "admin"
+    created_by: "Seeder"
   },
   {
     id_nombre_promocion: 'Promocion3',
     url_imagen_promocion: 'imagen3.jpg',
-    created_by: "admin"
+    created_by: "Seeder"
   },
   {
     id_nombre_promocion: 'Promocion4',
     url_imagen_promocion: 'imagen4.jpg',
-    created_by: "admin"
+    created_by: "Seeder"
   },
   {
     id_nombre_promocion: 'Promocion5',
     url_imagen_promocion: 'imagen5.jpg',
-    created_by: "admin"
+    created_by: "Seeder"
   },
 ];
 

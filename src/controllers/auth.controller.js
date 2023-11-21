@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const usuarioModel = require('../models/usuarios.model');
+const usuarioModel = require('../models/usuario.model');
+const jwtSecret = process.env.JWT_SECRET;
 
 const login = async (req, res) => {
     try {
@@ -16,17 +17,17 @@ const login = async (req, res) => {
         const passwordCorrecto = bcrypt.compareSync(password, usuarioEncontrado.password);
         if (!passwordCorrecto) {
             return res.status(400).json({
-                message: "Usuario o password incorrecto"
+                message: "Usuario o password incorrecto."
             });
         }
 
         const payload = {
             usuario: {
-                usuario: usuarioEncontrado.usuario
+                usuario: usuarioEncontrado.usuario,
+                id: usuarioEncontrado._id
             }
         }
-
-        const token = jwt.sign(payload, 'motomania', {expiresIn: '2h'});
+        const token = jwt.sign(payload, jwtSecret, {expiresIn: '8h'});
 
         return res.status(200).json({
             message: "Acceso correcto",

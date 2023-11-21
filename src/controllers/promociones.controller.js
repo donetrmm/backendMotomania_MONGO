@@ -1,12 +1,15 @@
-const Promocion = require('../models/promociones.model');
+const Promocion = require('../models/promocion.model');
 const fs = require('fs');
+const socket = require("../configs/socket.config");
+const io = socket.getIo()
+
 const createPromocion = async (req, res) => {
   try {
-    const { id_nombre_promocion, created_by } = req.body;
+    const { id_nombre_promocion } = req.body;
     const url_imagen_promocion = req.file.filename; 
-    const existingUser = await Promocion.findOne({ id_nombre_promocion });
-
-    if (existingUser) {
+    const existigPromotion = await Promocion.findOne({ id_nombre_promocion });
+    const created_by = req.usuario.id;
+    if (existigPromotion) {
       res.status(400).json({ message: 'ID de la promoción no disponible' });
       return;
     }
@@ -15,8 +18,11 @@ const createPromocion = async (req, res) => {
       url_imagen_promocion,
       created_by,
     });
+    await io.emit('promocionCreada', { promocion });
 
     await promocion.save();
+
+
 
     res.status(201).json({message: "Promociones agregada exitosamente"});
   } catch (error) {
@@ -28,7 +34,6 @@ const createPromocion = async (req, res) => {
 const updatePromocion = async (req, res) => {
   try {
     const { id_nombre_promocion } = req.params;
-    const { updated_by } = req.body;
     
 
     const promocion = await Promocion.findOne({ id_nombre_promocion, deleted: false });
@@ -36,15 +41,15 @@ const updatePromocion = async (req, res) => {
     if (!promocion) {
       return res.status(404).json({ error: 'Promoción no encontrada.' });
     }
-    fs.unlinkSync(`public/${promocion.url_imagen_promocion}`);
+    fs.unlinkSync(`public/images/${promocion.url_imagen_promocion}`);
 
 
     promocion.url_imagen_promocion = req.file.filename;
     promocion.updated_at = new Date();
-    promocion.updated_by = updated_by;
+    promocion.updated_by = req.usuario.id;
 
     await promocion.save();
-
+    await io.emit('promocionActualizada', { promocion });
     res.status(200).json({message: "Promoción actualizada correctamente"});
   } catch (error) {
     console.log(error)
@@ -54,8 +59,8 @@ const updatePromocion = async (req, res) => {
 
 const deletePromocion = async (req, res) => {
   try {
-    const { id_nombre_promocion, deleted_by} = req.params;
-
+    const { id_nombre_promocion } = req.params;
+    const deleted_by = req.usuario.id;
     const promocion = await Promocion.findOne({ id_nombre_promocion, deleted: false });
 
     if (!promocion) {
@@ -67,6 +72,7 @@ const deletePromocion = async (req, res) => {
     promocion.deleted_by = deleted_by;
 
     await promocion.save();
+    await io.emit('promocionEliminada', { promocion });
 
     res.status(200).json({ message: "Promoción eliminada exitosamente."});
   } catch (error) {
@@ -91,18 +97,42 @@ const getPromocion = async (req, res) => {
 };
 
 const getPromociones = async (req, res) => {
-    try {
-      const promocion = await Promocion.find({ deleted: false });
-  
-      if (!promocion) {
-        return res.status(404).json({ error: 'No hay promociones guardadas.' });
-      }
-  
-      res.status(200).json(promocion);
-    } catch (error) {
-      res.status(500).json({ error: 'Error al buscar la promoción.' });
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    const skip = (page - 1) * limit;
+    const totalPromociones = await Promocion.countDocuments({ deleted: false });
+    const totalPages = Math.ceil(totalPromociones / limit);
+
+    if (page > totalPages) {
+      return res.status(404).json({ error: 'Página no encontrada.' });
     }
-  };
+
+    const promociones = await Promocion.find({ deleted: false })
+      .skip(skip)
+      .limit(limit)
+      .sort({ codigo: 1 });
+
+    res.status(200).json({
+      promociones,
+      currentPage: page,
+      totalPages,
+      totalPromociones,
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Error al buscar las promociones.' });
+  }
+};
+
+module.exports = {
+  createPromocion,
+  updatePromocion,
+  deletePromocion,
+  getPromocion,
+  getPromociones,
+};
+
   
 
 module.exports = {
