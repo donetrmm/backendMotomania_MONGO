@@ -1,149 +1,24 @@
-const bcrypt = require('bcrypt');
-const Usuario = require('../models/usuario.model'); 
-const saltosBcrypt = parseInt(process.env.SALTOS_BCRYPT);
-const mongoose = require("mongoose");
-
-exports.createUser = async (req, res) => {
-  const session = await mongoose.startSession();
-  session.startTransaction();
-  try {
-    const { nombre, apellido, usuario, password } = req.body;
-    const existingUser = await Usuario.findOne({ usuario });
-    const createdBy = req.usuario.id;
-    if (existingUser) {
-      res.status(400).json({ message: 'Nombre de usuario no disponible' });
-      return;
+const usuarioModel = require('../models/usuarios.model');
+const  create = async (req, res) =>{
+    try{
+        let usuario = new usuarioModel({
+            nombre: req.body.nombre,
+            email: req.body.email,
+            password: req.body.password
+        })
+    
+        await usuario.save();
+        
+        return res.status(201).json({ message: "Usuario creado exitosamente." });
+    } catch(error) {
+        return res.status(error.code).json({
+            message: "Falló al crear usuario!",
+            error: error.message
+        })
     }
-    const hashedPassword = await bcrypt.hashSync(password, saltosBcrypt);
+}
 
-    const nuevoUsuario = new Usuario({
-      nombre: nombre,
-      apellido: apellido,
-      usuario: usuario,
-      password: hashedPassword,
-      created_by: createdBy,
-    });
 
-    await nuevoUsuario.save();
-    await session.commitTransaction();
-    session.endSession();
-
-    res.status(201).json({message: "Usuario creado exitosamente"});
-  } catch (error) {
-    await session.abortTransaction();
-    session.endSession();
-    res.status(500).json({ message: 'Error al crear el usuario', error: error });
-  }
-};
-
-exports.getUserByUsername = async (req, res) => {
-  try {
-    const { username } = req.params;
-
-    const usuario = await Usuario.findOne({ usuario: username });
-
-    if (!usuario) {
-      res.status(404).json({ error: 'Usuario no encontrado' });
-      return;
-    }
-
-    res.status(200).json(usuario);
-  } catch (error) {
-    res.status(500).json({ error: 'Error al buscar el usuario' });
-  }
-};
-
-exports.getAllUsers = async (req, res) => {
-  try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
-
-    const skip = (page - 1) * limit;
-    const totalUsuarios = await Usuario.countDocuments({ deleted: false });
-    const totalPages = Math.ceil(totalUsuarios / limit);
-
-    if (page > totalPages) {
-      return res.status(404).json({ error: 'Página no encontrada' });
-    }
-
-    const usuarios = await Usuario.find({ deleted: false })
-      .skip(skip)
-      .limit(limit);
-
-    res.status(200).json({
-      usuarios,
-      currentPage: page,
-      totalPages,
-      totalUsuarios,
-    });
-  } catch (error) {
-    res.status(500).json({ error: 'Error al buscar los usuarios' });
-  }
-};
-
-exports.updateUser = async (req, res) => {
-  const session = await mongoose.startSession();
-  session.startTransaction();
-  try {
-    const { username } = req.params;
-    const { nombre, apellido, password } = req.body;
-    const updatedBy = req.usuario.id;
-
-    const usuario = await Usuario.findOne({ usuario: username, deleted: false });
-
-    if (!usuario) {
-      res.status(404).json({ error: 'Usuario no encontrado' });
-      return;
-    }
-
-    if (nombre) usuario.nombre = nombre;
-    if (apellido) usuario.apellido = apellido;
-    if (password) {
-      const hashedPassword = await bcrypt.hash(password, parseInt(process.env.SALTOS_BCRYPT));
-      usuario.password = hashedPassword;
-    }
-
-    usuario.updated_at = new Date();
-    usuario.updated_by = updatedBy;
-
-    await usuario.save();
-    await session.commitTransaction();
-    session.endSession();
-
-    res.status(200).json({ message: "Usuario actualizado exitosamente."});
-  } catch (error) {
-    await session.abortTransaction();
-    session.endSession();
-    res.status(500).json({ error: 'Error al actualizar el usuario' });
-  }
-};
-
-exports.deleteUser = async (req, res) => {
-  const session = await mongoose.startSession();
-  session.startTransaction();
-  try {
-    const { username } = req.params;
-    const deletedBy = req.usuario.id;
-
-    const usuario = await Usuario.findOne({ usuario: username, deleted: false });
-
-    if (!usuario) {
-      res.status(404).json({ error: 'Usuario no encontrado' });
-      return;
-    }
-
-    usuario.deleted = true;
-    usuario.deleted_at = new Date();
-    usuario.deleted_by = deletedBy; 
-
-    await usuario.save();
-    await session.commitTransaction();
-    session.endSession();
-
-    res.status(200).json({ message: "Usuario eliminado exitosamente" });
-  } catch (error) {
-    await session.abortTransaction();
-    session.endSession();
-    res.status(500).json({ error: 'Error al eliminar el usuario' });
-  }
-};
+module.exports = {
+    create: create,
+}
