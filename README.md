@@ -7,7 +7,7 @@ Para instalar e inicializar el backend, siga estos pasos:
 Para instalar este proyecto, necesitará tener instalado Node.js, MongoDB y Git. Una vez que los tenga instalados, puede clonar el proyecto con el siguiente comando:
 
 ```
-git clone https://github.com/[tu-nombre]/web-api-mongodb.git
+git clone https://github.com/donetrmm/backendMotomania_MONGO.git
 ```
 
 ```
@@ -39,7 +39,7 @@ Este proyecto utiliza las siguientes tecnologías:
 
 **Información relevante**
 
-El backend proporciona una API para crear, leer, actualizar y eliminar usuarios. También proporciona operaciones en tiempo real basado en Socket.io.
+El backend proporciona una API para crear, leer, actualizar y eliminar usuarios, productos y promociones. También proporciona operaciones en tiempo real basados en Socket.io.
 
 **Importar un archivo de thunder client de colección de peticiones a su extensión en visual studio code**
 
